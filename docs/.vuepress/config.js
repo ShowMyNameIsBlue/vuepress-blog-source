@@ -1,7 +1,7 @@
 const { defaultTheme } = require('@vuepress/theme-default')
 const { resolve } = require('path')
 module.exports = {
-  locales: 'zh-CN',
+  lang: 'zh-CN',
   title: '小刚的博客',
   public: resolve(__dirname, '../static'),
   head: [
