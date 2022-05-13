@@ -1,5 +1,9 @@
 const { defaultTheme } = require('@vuepress/theme-default')
 const { resolve } = require('path')
+const { viteBundler } = require('@vuepress/bundler-vite')
+const AutoImport = require('unplugin-auto-import/vite')
+const Components = require('unplugin-vue-components/vite')
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers')
 module.exports = {
   lang: 'zh-CN',
   title: '小刚的博客',
@@ -47,6 +51,17 @@ module.exports = {
     editLinkText: "编辑此页",
     lastUpdatedText: "上次更新",
     repo: 'vuejs/vuepress',
-
+  }),
+  bundler: viteBundler({
+    viteOptions: {
+      plugins: [
+        AutoImport({
+          resolvers: [ElementPlusResolver()],
+        }),
+        Components({
+          resolvers: [ElementPlusResolver()],
+        }),
+      ],
+    },
   }),
 }

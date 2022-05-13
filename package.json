@@ -10,6 +10,11 @@
     "docs:move": "node ./tools"
   },
   "devDependencies": {
+    "unplugin-auto-import": "^0.7.1",
+    "unplugin-vue-components": "^0.19.5",
     "vuepress": "^2.0.0-beta.43"
+  },
+  "dependencies": {
+    "element-plus": "^2.2.0"
   }
 }
